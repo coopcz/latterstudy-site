@@ -1,27 +1,22 @@
-/* Global styles */
+/* Base */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #001f3f;
+  background-color: #001d3d;
   color: white;
 }
 
 a {
   text-decoration: none;
-  color: #FFCC00;
-  font-weight: 500;
+  color: #FFCB1D;
 }
 
-/* Navigation */
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #002747;
   padding: 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
 .logo {
@@ -30,65 +25,158 @@ a {
 
 nav a {
   margin-left: 20px;
-  font-size: 16px;
+  font-weight: 500;
 }
 
-/* Hero section */
+/* Hero Section */
 .hero {
   text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(to bottom right, #003366, #001f3f);
+  padding: 80px 20px;
 }
 
 .hero h1 {
   font-size: 48px;
   margin-bottom: 10px;
-  color: #FFCC00;
 }
 
 .hero p {
   font-size: 20px;
   margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
 }
 
 .cta {
-  display: inline-block;
   padding: 12px 24px;
-  background: #4CAF50;
+  background-color: #004c26;
   color: white;
   border-radius: 8px;
-  transition: background 0.3s;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .cta:hover {
-  background: #126b01;
+  background-color: #006a38;
 }
 
-/* Features section */
+.cta.secondary {
+  background-color: #004c26;
+}
+
+.cta.subtle {
+  background-color: transparent;
+  border: 2px solid #004c26;
+  color: #004c26;
+}
+
+.cta.subtle:hover {
+  background-color: #004c26;
+  color: white;
+}
+
+/* Section Styles */
 .section {
   padding: 60px 20px;
-  background: #002747;
   text-align: center;
 }
 
-.section h2 {
-  color: #FFCC00;
+.section.alt {
+  background-color: #00284f;
 }
 
-.section ul {
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Features Row (3-column) */
+.features-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.features-row > div {
+  flex: 1 1 250px;
+  max-width: 300px;
+}
+
+/* Checklist */
+.checklist {
   list-style: none;
   padding: 0;
+  margin-top: 30px;
   font-size: 18px;
 }
 
-.section li {
-  margin: 15px 0;
+.checklist li::before {
+  content: '✔';
+  color: #FFCB1D;
+  margin-right: 10px;
+}
+
+/* Feature Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.card {
+  background-color: #001d3d;
+  border: 1px solid #004c26;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #FFCB1D;
+}
+
+/* Pricing */
+.pricing {
+  list-style: none;
+  padding: 0;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* Trust Section */
+.trust {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
 }
 
 /* Footer */
 footer {
   padding: 20px;
-  background: #001f3f;
+  font-size: 14px;
   text-align: center;
-  color: #ccc;
 }
+
+footer a {
+  color: #FFCB1D;
+}
+
