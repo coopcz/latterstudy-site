@@ -48,15 +48,34 @@
       padding: 2px 6px;
       border-radius: 6px;
     }
+    .faq-item {
+      background-color: #00284f;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      position: relative;
+      transition: background-color 0.3s ease;
+    }
+    .faq-item h3 {
+      margin: 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.1rem;
+    }
     .faq-item p {
       display: none;
-      margin-top: 5px;
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      color: #ccc;
     }
     .faq-item.open p {
       display: block;
     }
-    .faq-item h3 {
-      cursor: pointer;
+    .faq-toggle-icon {
+      font-size: 1.2rem;
+      margin-left: 1rem;
     }
   </style>
 </head>
@@ -142,19 +161,19 @@
     <h2>Frequently Asked Questions</h2>
     <div class="faq">
       <div class="faq-item" onclick="toggleFAQ(this)">
-        <h3>Is this app officially from the Church?</h3>
+        <h3>Is this app officially from the Church?<span class="faq-toggle-icon">+</span></h3>
         <p>No. Latter Study is an independent tool created by members to support gospel study, but it’s not affiliated with the Church.</p>
       </div>
       <div class="faq-item" onclick="toggleFAQ(this)">
-        <h3>Is it free?</h3>
+        <h3>Is it free?<span class="faq-toggle-icon">+</span></h3>
         <p>You get a 7-day free trial. After that, it’s $5/month or $40/year.</p>
       </div>
       <div class="faq-item" onclick="toggleFAQ(this)">
-        <h3>What platforms is it on?</h3>
+        <h3>What platforms is it on?<span class="faq-toggle-icon">+</span></h3>
         <p>iOS and Android — coming to the App Store and Google Play soon.</p>
       </div>
       <div class="faq-item" onclick="toggleFAQ(this)">
-        <h3>Can I cancel any time?</h3>
+        <h3>Can I cancel any time?<span class="faq-toggle-icon">+</span></h3>
         <p>Yes. There’s no contract — cancel whenever you like.</p>
       </div>
     </div>
@@ -188,7 +207,11 @@
     }
 
     function toggleFAQ(item) {
+      const allIcons = item.querySelectorAll(".faq-toggle-icon");
       item.classList.toggle("open");
+      allIcons.forEach(icon => {
+        icon.textContent = item.classList.contains("open") ? '×' : '+';
+      });
     }
   </script>
 </body>
