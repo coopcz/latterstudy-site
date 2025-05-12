@@ -10,6 +10,44 @@
     html {
       scroll-behavior: smooth;
     }
+    .nav-center {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-grow: 1;
+    }
+    .pricing-toggle-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      gap: 1rem;
+    }
+    .billing-option {
+      position: relative;
+      font-weight: bold;
+      padding: 10px 16px;
+      border: 1px solid #004c26;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #001d3d;
+      color: white;
+    }
+    .billing-option.active {
+      background-color: #004c26;
+      color: #fff;
+    }
+    .discount-badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: #FFCB1D;
+      color: #001d3d;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
   </style>
 </head>
 <body>
@@ -64,14 +102,13 @@
   <!-- Pricing -->
   <section id="pricing" class="section">
     <h2>Choose Your Plan</h2>
-    <div class="pricing-switch">
-      <label class="switch">
-        <input type="checkbox" id="togglePrice" onclick="togglePricing()">
-        <span class="slider"></span>
-      </label>
-      <div class="price-labels">
-        <span id="monthlyPrice" class="active-price">$5/mo</span>
-        <span id="yearlyPrice" class="hidden-price">$40/yr</span>
+    <div class="pricing-toggle-wrapper">
+      <div class="billing-option active" id="monthlyOption" onclick="setBilling('monthly')">
+        Monthly - $5/mo
+      </div>
+      <div class="billing-option" id="yearlyOption" onclick="setBilling('yearly')">
+        Yearly - $40/yr
+        <span class="discount-badge">Save 33%</span>
       </div>
     </div>
     <p class="price-subtext" id="priceSubtext">Billed monthly • Cancel anytime</p>
@@ -125,11 +162,19 @@
   </footer>
 
   <script>
-    function togglePricing() {
-      const isYearly = document.getElementById("togglePrice").checked;
-      document.getElementById("monthlyPrice").style.display = isYearly ? "none" : "inline";
-      document.getElementById("yearlyPrice").style.display = isYearly ? "inline" : "none";
-      document.getElementById("priceSubtext").textContent = isYearly ? "Billed annually • Save 33%" : "Billed monthly • Cancel anytime";
+    function setBilling(mode) {
+      const monthly = document.getElementById("monthlyOption");
+      const yearly = document.getElementById("yearlyOption");
+      const subtext = document.getElementById("priceSubtext");
+      if (mode === 'monthly') {
+        monthly.classList.add("active");
+        yearly.classList.remove("active");
+        subtext.textContent = "Billed monthly • Cancel anytime";
+      } else {
+        yearly.classList.add("active");
+        monthly.classList.remove("active");
+        subtext.textContent = "Billed annually • Save 33%";
+      }
     }
   </script>
 </body>
