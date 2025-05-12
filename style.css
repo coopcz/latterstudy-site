@@ -29,40 +29,6 @@ a {
   cursor: pointer;
 }
 
-/* Desktop Nav */
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-/* Mobile Hamburger */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  cursor: pointer;
-}
-
-.hamburger div {
-  width: 25px;
-  height: 3px;
-  background: #FFCB1D;
-}
-
-/* Mobile Menu */
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  background-color: #001d3d;
-  padding: 10px 20px;
-}
-
-.mobile-menu a {
-  padding: 10px 0;
-  color: white;
-  border-top: 1px solid #004c26;
-}
-
 .download-btn {
   padding: 10px 18px;
   background-color: #004c26;
@@ -76,30 +42,149 @@ a {
   background-color: #006a38;
 }
 
-/* Section */
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: #FFCB1D;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.cta {
+  padding: 12px 24px;
+  background-color: #004c26;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+  background-color: #006a38;
+}
+
+.cta.secondary {
+  background-color: #004c26;
+}
+
+.cta.subtle {
+  background-color: transparent;
+  border: 2px solid #004c26;
+  color: #004c26;
+}
+
+.cta.subtle:hover {
+  background-color: #004c26;
+  color: white;
+}
+
+/* Section Styles */
 .section {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section.alt {
+  background-color: #00284f;
 }
 
 .section h2 {
-  font-size: 28px;
-  color: #FFCB1D;
+  font-size: 32px;
   margin-bottom: 20px;
 }
 
-.section p,
-.section li {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 16px;
+/* Features Row (3-column) */
+.features-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-ul {
-  padding-left: 20px;
+.features-row > div {
+  flex: 1 1 250px;
+  max-width: 300px;
 }
 
+/* Checklist */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+.checklist li::before {
+  content: '✔';
+  color: #FFCB1D;
+  margin-right: 10px;
+}
+
+/* Feature Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.card {
+  background-color: #001d3d;
+  border: 1px solid #004c26;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #FFCB1D;
+}
+
+/* Pricing */
+.pricing {
+  list-style: none;
+  padding: 0;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* Trust Section */
+.trust {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Footer */
 footer {
   padding: 20px;
   font-size: 14px;
@@ -111,22 +196,28 @@ footer a {
   color: #FFCB1D;
 }
 
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-  .nav-links {
-    display: none;
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
-  .hamburger {
-    display: flex;
+  .hero h1 {
+    font-size: 36px;
   }
 
-  .mobile-menu {
-    display: flex;
+  .cta-buttons {
+    flex-direction: column;
   }
 
-  .download-btn {
-    margin-top: 10px;
+  .features-row {
+    flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
 
