@@ -48,6 +48,16 @@
       padding: 2px 6px;
       border-radius: 6px;
     }
+    .faq-item p {
+      display: none;
+      margin-top: 5px;
+    }
+    .faq-item.open p {
+      display: block;
+    }
+    .faq-item h3 {
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -131,19 +141,19 @@
   <section id="faq" class="section alt">
     <h2>Frequently Asked Questions</h2>
     <div class="faq">
-      <div class="faq-item">
+      <div class="faq-item" onclick="toggleFAQ(this)">
         <h3>Is this app officially from the Church?</h3>
         <p>No. Latter Study is an independent tool created by members to support gospel study, but it’s not affiliated with the Church.</p>
       </div>
-      <div class="faq-item">
+      <div class="faq-item" onclick="toggleFAQ(this)">
         <h3>Is it free?</h3>
         <p>You get a 7-day free trial. After that, it’s $5/month or $40/year.</p>
       </div>
-      <div class="faq-item">
+      <div class="faq-item" onclick="toggleFAQ(this)">
         <h3>What platforms is it on?</h3>
         <p>iOS and Android — coming to the App Store and Google Play soon.</p>
       </div>
-      <div class="faq-item">
+      <div class="faq-item" onclick="toggleFAQ(this)">
         <h3>Can I cancel any time?</h3>
         <p>Yes. There’s no contract — cancel whenever you like.</p>
       </div>
@@ -175,6 +185,10 @@
         monthly.classList.remove("active");
         subtext.textContent = "Billed annually • Save 33%";
       }
+    }
+
+    function toggleFAQ(item) {
+      item.classList.toggle("open");
     }
   </script>
 </body>
