@@ -10,94 +10,30 @@
     html {
       scroll-behavior: smooth;
     }
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-      flex-grow: 1;
-    }
-    .pricing-toggle {
-      margin-bottom: 20px;
-    }
-    .pricing-toggle .switch {
-      display: inline-block;
-      position: relative;
-      width: 60px;
-      height: 30px;
-    }
-    .pricing-toggle .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-    .pricing-toggle .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      transition: .4s;
-      border-radius: 30px;
-    }
-    .pricing-toggle .slider:before {
-      position: absolute;
-      content: "";
-      height: 22px;
-      width: 22px;
-      left: 4px;
-      bottom: 4px;
-      background-color: white;
-      transition: .4s;
-      border-radius: 50%;
-    }
-    .pricing-toggle input:checked + .slider {
-      background-color: #004c26;
-    }
-    .pricing-toggle input:checked + .slider:before {
-      transform: translateX(30px);
-    }
-    .pricing-price {
-      font-size: 24px;
-      margin-top: 10px;
-      color: #FFCB1D;
-    }
   </style>
-  <script>
-    function togglePrice() {
-      const monthly = document.getElementById("monthly-price");
-      const yearly = document.getElementById("yearly-price");
-      const checkbox = document.getElementById("billing-toggle");
-      if (checkbox.checked) {
-        monthly.style.display = "none";
-        yearly.style.display = "block";
-      } else {
-        monthly.style.display = "block";
-        yearly.style.display = "none";
-      }
-    }
-  </script>
 </head>
-<body style="background-color: #001d3d; color: white;">
+<body>
   <!-- Navbar -->
   <header class="navbar">
-    <a href="/" class="brand">
-      <img src="/assets/logo.png" alt="Latter Study Logo" class="logo" />
-      <span class="brand-text">Latter Study</span>
-    </a>
-    <nav class="nav-links">
+    <div class="nav-left">
+      <a href="/" class="brand">
+        <img src="/assets/logo.png" alt="Latter Study Logo" class="logo" />
+        <span class="brand-text">Latter Study</span>
+      </a>
+    </div>
+    <nav class="nav-center">
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a href="#" class="download-btn">Download App</a>
+    <div class="nav-right">
+      <a href="#" class="download-btn">Download App</a>
+    </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <h1 style="color: #FFCB1D;">LDS study, simplified.</h1>
+    <h1>LDS study, simplified.</h1>
     <p>Build talks. Study daily. Stay consistent. Latter Study helps you study scriptures, create lessons, and prepare devotionals with ease — all in one place.</p>
     <div class="cta-buttons">
       <a href="#" class="cta">Download on the App Store</a>
@@ -106,7 +42,7 @@
     </div>
   </section>
 
-  <!-- What it Does -->
+  <!-- Features -->
   <section id="features" class="section alt">
     <h2>Everything you need for powerful gospel study.</h2>
     <div class="features-row">
@@ -126,25 +62,28 @@
   </section>
 
   <!-- Pricing -->
-  <section id="pricing" class="section alt">
+  <section id="pricing" class="section">
     <h2>Choose Your Plan</h2>
-    <div class="pricing-toggle">
+    <div class="pricing-switch">
       <label class="switch">
-        <input type="checkbox" id="billing-toggle" onclick="togglePrice()">
+        <input type="checkbox" id="togglePrice" onclick="togglePricing()">
         <span class="slider"></span>
       </label>
-      <div id="monthly-price" class="pricing-price">$5/month – Billed monthly</div>
-      <div id="yearly-price" class="pricing-price" style="display:none;">$40/year – Save 33%</div>
+      <div class="price-labels">
+        <span id="monthlyPrice" class="active-price">$5/mo</span>
+        <span id="yearlyPrice" class="hidden-price">$40/yr</span>
+      </div>
     </div>
-    <ul class="pricing">
+    <p class="price-subtext" id="priceSubtext">Billed monthly • Cancel anytime</p>
+    <ul class="pricing-list">
       <li>✅ Daily scripture & mini lesson</li>
-      <li>✅ AI-generated talk & lesson builder</li>
-      <li>✅ Manual lesson & outline creator</li>
-      <li>✅ Saved lesson library</li>
-      <li>✅ Gospel Q&A chatbot</li>
-      <li>✅ Daily missionary challenges</li>
-      <li>✅ Personal study journal</li>
-      <li>✅ Visual streak tracking</li>
+      <li>✅ AI-generated talks & lesson builder</li>
+      <li>✅ Manual talk creator with scriptures</li>
+      <li>✅ Saved talks & outline manager</li>
+      <li>✅ Gospel chatbot with scripture references</li>
+      <li>✅ Visual scripture streak tracking</li>
+      <li>✅ Personal spiritual journal</li>
+      <li>✅ Daily missionary challenge</li>
     </ul>
     <div class="cta-buttons">
       <a href="#" class="cta">Start Free 7-Day Trial</a>
@@ -152,33 +91,46 @@
   </section>
 
   <!-- FAQ Section -->
-  <section id="faq" class="section">
+  <section id="faq" class="section alt">
     <h2>Frequently Asked Questions</h2>
     <div class="faq">
-      <h3>Is this app officially from the Church?</h3>
-      <p>No. Latter Study is an independent tool created by members to support gospel study, but it’s not affiliated with the Church.</p>
-
-      <h3>Is it free?</h3>
-      <p>You get a 7-day free trial. After that, it’s $5/month or $40/year.</p>
-
-      <h3>What platforms is it on?</h3>
-      <p>iOS and Android — coming to the App Store and Google Play soon.</p>
-
-      <h3>Can I cancel any time?</h3>
-      <p>Yes. There’s no contract — cancel whenever you like.</p>
+      <div class="faq-item">
+        <h3>Is this app officially from the Church?</h3>
+        <p>No. Latter Study is an independent tool created by members to support gospel study, but it’s not affiliated with the Church.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is it free?</h3>
+        <p>You get a 7-day free trial. After that, it’s $5/month or $40/year.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What platforms is it on?</h3>
+        <p>iOS and Android — coming to the App Store and Google Play soon.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I cancel any time?</h3>
+        <p>Yes. There’s no contract — cancel whenever you like.</p>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer style="background-color: #001d3d; text-align: center; padding: 20px; font-size: 14px; color: #ccc;">
-    <p style="margin: 8px 0;">© 2025 Crescent Developments LLC</p>
-    <p style="margin: 8px 0;">Built with Purpose ✨ by Crescent Developments</p>
-    <p style="margin: 8px 0;">
-      <a href="/terms.html" style="color: #FFCB1D; margin: 0 10px;">Terms of Service</a> |
-      <a href="/privacy.html" style="color: #FFCB1D; margin: 0 10px;">Privacy Policy</a> |
-      <a href="mailto:support@latterstudy.com" style="color: #FFCB1D; margin: 0 10px;">Contact Support</a>
+  <footer>
+    <p>© 2025 Crescent Developments LLC</p>
+    <p>Built with Purpose ✨ by Crescent Developments</p>
+    <p>
+      <a href="/terms.html">Terms of Service</a> |
+      <a href="/privacy.html">Privacy Policy</a> |
+      <a href="mailto:support@latterstudy.com">Contact Support</a>
     </p>
   </footer>
+
+  <script>
+    function togglePricing() {
+      const isYearly = document.getElementById("togglePrice").checked;
+      document.getElementById("monthlyPrice").style.display = isYearly ? "none" : "inline";
+      document.getElementById("yearlyPrice").style.display = isYearly ? "inline" : "none";
+      document.getElementById("priceSubtext").textContent = isYearly ? "Billed annually • Save 33%" : "Billed monthly • Cancel anytime";
+    }
+  </script>
 </body>
 </html>
-l>
