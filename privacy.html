@@ -3,112 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy – Latter Study</title>
+  <title>Privacy Policy - Latter Study</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
   <style>
-    /* === copy-pasted from index.html === */
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #001d3d;
-      color: white;
-      text-align: center;
-      padding: 0 20px;
+    /* ==== Termly container overrides ==== */
+    .termlify {
+      background-color: #fff;
+      color: #000;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: left;
     }
-    .logo {
-      margin: 40px auto 20px;
-      height: 60px;
-    }
-    h1 {
-      font-size: 36px;
-      color: #FFCB1D;
-      margin-bottom: 10px;
-    }
-    h2 {
-      font-size: 18px;
-      color: #ccc;
-      margin-bottom: 20px;
-    }
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background-color: #001d3d;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: white;
-    }
-    .brand-text {
-      font-size: 20px;
-      font-weight: bold;
-      color: #FFCB1D;
-    }
-    .logo {
-      height: 40px;
-      width: auto;
-      cursor: pointer;
-    }
-    .download-btn {
-      padding: 10px 18px;
-      background-color: #004c26;
-      color: white;
-      font-weight: bold;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
-    }
-    .download-btn:hover {
-      background-color: #006a38;
-    }
-    footer a {
-      color: #FFCB1D;
-      margin: 0 10px;
-    }
-    /* === end index styles === */
-
-    /* override Termly embed to fit your palette */
-    /* Termly injects a .termly-policy-container wrapper */
-    .termly-policy-container,
-    .termly-policy-container h1,
-    .termly-policy-container h2,
-    .termly-policy-container h3,
-    .termly-policy-container h4,
-    .termly-policy-container p,
-    .termly-policy-container li,
-    .termly-policy-container a {
-      color: white !important;
-      background: none !important;
-    }
-    .termly-policy-container a {
-      color: #FFCB1D !important;
-    }
-    /* make headings pop */
-    .termly-policy-container h1,
-    .termly-policy-container h2,
-    .termly-policy-container h3 {
-      color: #FFCB1D !important;
+    .termlify * {
+      color: inherit !important;
     }
   </style>
-  <script defer>
-    function toggleMenu() {
-      const m = document.getElementById('mobile-menu');
-      m.style.display = m.style.display === 'flex' ? 'none' : 'flex';
-    }
-  </script>
 </head>
 <body>
-  <header class="navbar">
-    <a href="/" class="brand">
-      <img src="/assets/logo.png" alt="Latter Study Logo" class="logo" />
-      <span class="brand-text">Latter Study</span>
-    </a>
-    <button class="download-btn"
-            onclick="location.href='https://apps.apple.com/us/app/latter-study
+  <!-- match your index page header -->
+  <img src="/assets/logo.png" alt="Latter Study Logo" class="logo">
+  <h1>Privacy Policy</h1>
+  <p style="color: #ccc; margin-bottom: 30px;">Last updated: May 2025</p>
+
+  <!-- your page content section -->
+  <main class="section">
+    <!-- TERM LIFY WRAPPER -->
+    <div class="termlify">
+      <!-- Termly will replace this div with your full policy -->
+      <div name="termly-embed" data-id="e790c9c5-9eb7-4e0e-9f96-c8f75a3b3509"></div>
+      <script>
+        (function(d, s, id) {
+          var js, tjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "https://app.termly.io/embed-policy.min.js";
+          tjs.parentNode.insertBefore(js, tjs);
+        }(document, 'script', 'termly-jssdk'));
+      </script>
+    </div>
+  </main>
+
+  <!-- match your index page footer -->
+  <footer>
+    <p>
+      <a href="/privacy.html">Privacy</a> |
+      <a href="/terms.html">Terms</a> |
+      <a href="mailto:support@latterstudy.com">Contact</a>
+    </p>
+    <p>© 2025 Crescent Developments. All rights reserved.</p>
+    <p>Latter Study is an independent project by Crescent Developments.</p>
+  </footer>
+</body>
+</html>
