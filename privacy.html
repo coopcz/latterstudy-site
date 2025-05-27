@@ -7,6 +7,25 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
   <style>
+    /* ==== Header tweaks for just this page ==== */
+    .privacy-header {
+      text-align: center;
+      padding: 20px 0;
+    }
+    .privacy-header a {
+      display: inline-block;
+    }
+    .privacy-header img {
+      height: 60px;
+      margin: 0 auto;
+      display: block;
+    }
+    .privacy-header h1 {
+      margin: 12px 0 0;
+      font-size: 28px;
+      color: white;
+    }
+
     /* ==== Termly container overrides ==== */
     .termlify {
       background-color: #fff;
@@ -23,16 +42,15 @@
   </style>
 </head>
 <body>
-  <!-- match your index page header -->
-  <img src="/assets/logo.png" alt="Latter Study Logo" class="logo">
-  <h1>Privacy Policy</h1>
-  <p style="color: #ccc; margin-bottom: 30px;">Last updated: May 2025</p>
+  <!-- custom, centered header -->
+  <header class="privacy-header">
+    <a href="/"><img src="/assets/logo.png" alt="Latter Study Logo"></a>
+    <h1>Privacy Policy</h1>
+  </header>
 
-  <!-- your page content section -->
+  <!-- main content -->
   <main class="section">
-    <!-- TERM LIFY WRAPPER -->
     <div class="termlify">
-      <!-- Termly will replace this div with your full policy -->
       <div name="termly-embed" data-id="e790c9c5-9eb7-4e0e-9f96-c8f75a3b3509"></div>
       <script>
         (function(d, s, id) {
@@ -46,7 +64,7 @@
     </div>
   </main>
 
-  <!-- match your index page footer -->
+  <!-- same footer as index -->
   <footer>
     <p>
       <a href="/privacy.html">Privacy</a> |
