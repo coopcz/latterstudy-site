@@ -6,61 +6,82 @@
   <title>Terms of Use - Latter Study</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
-  <script defer>
-    function toggleMenu() {
-      const menu = document.getElementById('mobile-menu');
-      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+  <style>
+    /* ==== Custom header for terms page ==== */
+    .terms-header {
+      text-align: center;
+      padding: 24px 0;
     }
-  </script>
+    .terms-header a {
+      display: inline-block;
+    }
+    .terms-header img {
+      height: 60px;
+      margin: 0 auto;
+      display: block;
+    }
+    .terms-header .site-title {
+      margin: 12px 0 4px;
+      font-size: 28px;
+      color: #FFCB1D;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .terms-header .page-title {
+      margin: 0;
+      font-size: 22px;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* ==== Termly container overrides ==== */
+    .termlify {
+      background-color: #fff;
+      color: #000;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: left;
+    }
+    .termlify * {
+      color: inherit !important;
+    }
+  </style>
 </head>
 <body>
-<header class="navbar">
-  <a href="/" class="brand">
-    <img src="/assets/logo.png" alt="Latter Study Logo" class="logo" />
-    <span class="brand-text">Latter Study</span>
-  </a>
-  <a href="#" class="download-btn">Download App</a>
-</header>
+  <!-- centered logo + titles -->
+  <header class="terms-header">
+    <a href="/"><img src="/assets/logo.png" alt="Latter Study Logo"></a>
+    <h1 class="site-title">Latter Study</h1>
+    <h2 class="page-title">Terms of Use</h2>
+  </header>
 
-
-  <div class="mobile-menu" id="mobile-menu" style="display: none;">
-    <a href="/privacy.html">Privacy</a>
-    <a href="/terms.html">Terms</a>
-    <a href="#" class="download-btn">Download App</a>
-  </div>
-
+  <!-- main content -->
   <main class="section">
-    <h2>Terms of Use</h2>
-    <p>Last updated: May 2025</p>
-
-    <p>By using Latter Study, you agree to the following terms and conditions:</p>
-
-    <h3>1. App Usage</h3>
-    <p>Latter Study is intended to assist in personal gospel study. You may not misuse or exploit the app for unauthorized purposes.</p>
-
-    <h3>2. Intellectual Property</h3>
-    <p>All content, branding, and tools in the app and website are the property of Crescent Developments LLC. You may not copy, distribute, or repurpose materials without permission.</p>
-
-    <h3>3. Disclaimer</h3>
-    <p>Latter Study is an independent tool and is not affiliated with The Church of Jesus Christ of Latter-day Saints. All scripture references and teachings are offered for personal use only.</p>
-
-    <h3>4. Limitation of Liability</h3>
-    <p>We are not liable for any damages resulting from your use or inability to use the app. Use is at your own risk.</p>
-
-    <h3>5. Changes to Terms</h3>
-    <p>We may update these terms at any time. Continued use of the app implies acceptance of the latest version.</p>
-
-    <h3>6. Contact</h3>
-    <p>Questions? Contact us at <strong>support@latterstudy.com</strong>.</p>
+    <div class="termlify">
+      <!-- Termly embed for your Terms of Use -->
+      <div name="termly-embed" data-id="83347747-5846-4095-b111-18fec5dbb15f"></div>
+      <script>
+        (function(d, s, id) {
+          var js, tjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "https://app.termly.io/embed-policy.min.js";
+          tjs.parentNode.insertBefore(js, tjs);
+        }(document, 'script', 'termly-jssdk'));
+      </script>
+    </div>
   </main>
 
-<footer style="background-color: #001d3d; text-align: center; padding: 20px; font-size: 14px; color: #ccc;">
-  <p style="margin: 8px 0;">© 2025 Crescent Developments LLC</p>
-  <p style="margin: 8px 0;">Built with Purpose ✨ by Crescent Developments</p>
-  <p style="margin: 8px 0;">
-    <a href="/terms.html" style="color: #FFCB1D; margin: 0 10px;">Terms of Service</a> |
-    <a href="/privacy.html" style="color: #FFCB1D; margin: 0 10px;">Privacy Policy</a> |
-    <a href="mailto:support@latterstudy.com" style="color: #FFCB1D; margin: 0 10px;">Contact Support</a>
-  </p>
-</footer>
-
+  <!-- same footer as index & privacy -->
+  <footer>
+    <p>
+      <a href="/privacy.html">Privacy</a> |
+      <a href="/terms.html">Terms</a> |
+      <a href="mailto:support@latterstudy.com">Contact</a>
+    </p>
+    <p>© 2025 Crescent Developments. All rights reserved.</p>
+    <p>Latter Study is an independent project by Crescent Developments.</p>
+  </footer>
+</body>
+</html>
