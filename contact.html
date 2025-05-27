@@ -58,6 +58,7 @@
     .contact-form textarea {
       resize: vertical;
     }
+    /* center the submit button */
     .contact-form button {
       background-color: #FFCB1D;
       color: #001d3d;
@@ -67,7 +68,8 @@
       font-weight: bold;
       border-radius: 4px;
       cursor: pointer;
-      margin-top: 8px;
+      margin: 8px auto 0;
+      display: block;
     }
     .contact-form button:hover {
       opacity: 0.9;
@@ -137,7 +139,7 @@
         });
 
         if (r.ok) {
-          form.innerHTML = '<p style="color:#FFCB1D; font-size:18px;">Thanks for your message! We’ll be in touch soon.</p>';
+          form.innerHTML = '<p style="color:#FFCB1D; font-size:18px; text-align:center;">Thanks for your message! We’ll be in touch soon.</p>';
         } else {
           const err = await r.json();
           resp.textContent = err.error || 'Oops! Something went wrong.';
@@ -149,3 +151,4 @@
   </script>
 </body>
 </html>
+
