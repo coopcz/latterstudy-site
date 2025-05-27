@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
   <style>
-    /* ==== Header tweaks for just this page ==== */
+    /* ==== Custom header for privacy page ==== */
     .privacy-header {
       text-align: center;
-      padding: 20px 0;
+      padding: 24px 0;
     }
     .privacy-header a {
       display: inline-block;
@@ -20,10 +20,17 @@
       margin: 0 auto;
       display: block;
     }
-    .privacy-header h1 {
-      margin: 12px 0 0;
+    .privacy-header .site-title {
+      margin: 12px 0 4px;
       font-size: 28px;
+      color: #FFCB1D;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .privacy-header .page-title {
+      margin: 0;
+      font-size: 22px;
       color: white;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     /* ==== Termly container overrides ==== */
@@ -42,10 +49,11 @@
   </style>
 </head>
 <body>
-  <!-- custom, centered header -->
+  <!-- centered logo + titles -->
   <header class="privacy-header">
     <a href="/"><img src="/assets/logo.png" alt="Latter Study Logo"></a>
-    <h1>Privacy Policy</h1>
+    <h1 class="site-title">Latter Study</h1>
+    <h2 class="page-title">Privacy Policy</h2>
   </header>
 
   <!-- main content -->
