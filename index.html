@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Latter Study</title>
+  <title>Latter Study - Gospel Study Made Simple</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
   <style>
@@ -33,6 +33,14 @@
       margin-bottom: 10px;
     }
 
+    .hero-description {
+      color: #fff;
+      font-size: 16px;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+
     .disclaimer {
       color: #aaa;
       font-size: 12px;
@@ -41,12 +49,49 @@
       line-height: 1.4;
     }
 
+    .screenshots-section {
+      margin: 40px auto;
+      max-width: 800px;
+    }
+
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px auto;
+    }
+
+    .screenshot-card {
+      background-color: #00284f;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .screenshot-card:hover {
+      transform: translateY(-5px);
+    }
+
     .screenshot {
       width: 100%;
-      max-width: 300px;
-      margin: 20px auto;
+      max-width: 250px;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      margin-bottom: 15px;
+    }
+
+    .screenshot-title {
+      font-size: 18px;
+      color: #FFCB1D;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .screenshot-description {
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.4;
     }
 
     .features-grid {
@@ -54,19 +99,33 @@
       grid-template-columns: 1fr;
       gap: 20px;
       margin: 40px auto;
-      max-width: 400px;
+      max-width: 600px;
     }
 
     .feature-box {
       background-color: #00284f;
       padding: 20px;
       border-radius: 10px;
+      text-align: left;
     }
 
     .feature-box span {
       font-size: 24px;
       display: block;
       margin-bottom: 10px;
+    }
+
+    .feature-title {
+      font-size: 18px;
+      color: #FFCB1D;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .feature-description {
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.5;
     }
 
     .download-buttons {
@@ -81,6 +140,27 @@
       margin: 20px auto 30px;
     }
 
+    .cta-section {
+      background-color: #00284f;
+      padding: 30px;
+      border-radius: 15px;
+      margin: 40px auto;
+      max-width: 600px;
+    }
+
+    .cta-title {
+      font-size: 24px;
+      color: #FFCB1D;
+      margin-bottom: 15px;
+    }
+
+    .cta-description {
+      font-size: 16px;
+      color: #fff;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
     footer {
       font-size: 14px;
       color: #ccc;
@@ -92,12 +172,28 @@
       color: #FFCB1D;
       margin: 0 10px;
     }
+
+    @media (max-width: 768px) {
+      .screenshots-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-description {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
   <img src="/assets/logo.png" alt="Latter Study Logo" class="logo">
   <h1>Latter Study</h1>
   <h2>Gospel study, simplified.</h2>
+  
+  <p class="hero-description">
+    Transform your gospel study with AI-powered tools designed specifically for Latter-day Saints. 
+    Get daily scripture insights, build talks instantly, ask gospel questions, and track your spiritual progress - all in one beautiful app.
+  </p>
+
   <p class="disclaimer">
     Latter Study is not affiliated with The Church of Jesus Christ of Latter-day Saints and is an independent project by Crescent Developments.
   </p>
@@ -108,32 +204,92 @@
     </a>
   </div>
 
-  <img src="/assets/screenshot.png" alt="App Screenshot" class="screenshot">
+  <div class="screenshots-section">
+    <h2 style="color: #FFCB1D; font-size: 24px; margin-bottom: 30px;">See Latter Study in Action</h2>
+    
+    <div class="screenshots-grid">
+      <div class="screenshot-card">
+        <img src="/assets/latterstudylesson.png" alt="AI Lesson Builder" class="screenshot">
+        <div class="screenshot-title">AI Lesson Builder</div>
+        <div class="screenshot-description">
+          Create compelling talks and lessons in seconds with our intelligent AI assistant. 
+          Perfect for sacrament meeting talks, Sunday School, or personal study.
+        </div>
+      </div>
+      
+      <div class="screenshot-card">
+        <img src="/assets/latterstudychat.png" alt="Gospel Q&A Chat" class="screenshot">
+        <div class="screenshot-title">Gospel Q&A Chat</div>
+        <div class="screenshot-description">
+          Ask any gospel question and get thoughtful, doctrinally sound answers. 
+          Deepen your understanding through interactive conversations.
+        </div>
+      </div>
+      
+      <div class="screenshot-card">
+        <img src="/assets/latterstudyseed.png" alt="Daily Study Seeds" class="screenshot">
+        <div class="screenshot-title">Daily Study Seeds</div>
+        <div class="screenshot-description">
+          Start each day with inspiring scripture insights and study prompts. 
+          Build consistent study habits and grow spiritually.
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="features-grid">
     <div class="feature-box">
       <span>📖</span>
-      Daily scripture & insights
+      <div class="feature-title">Daily Scripture & Insights</div>
+      <div class="feature-description">
+        Receive daily scripture passages with thoughtful commentary and application ideas. 
+        Perfect for morning devotionals or evening reflection.
+      </div>
     </div>
+    
     <div class="feature-box">
       <span>📝</span>
-      Instant AI-powered talk builder
+      <div class="feature-title">Instant AI-Powered Talk Builder</div>
+      <div class="feature-description">
+        Transform any topic into a complete talk outline with scriptures, quotes, and personal stories. 
+        Save hours of preparation time while creating meaningful content.
+      </div>
     </div>
+    
     <div class="feature-box">
       <span>💬</span>
-      Gospel Q&A chatbot
+      <div class="feature-title">Gospel Q&A Chatbot</div>
+      <div class="feature-description">
+        Ask questions about doctrine, church history, or personal challenges. 
+        Get thoughtful, doctrinally sound responses to deepen your understanding.
+      </div>
     </div>
+    
     <div class="feature-box">
       <span>🔥</span>
-      Study streak & progress tracker
+      <div class="feature-title">Study Streak & Progress Tracker</div>
+      <div class="feature-description">
+        Build consistent study habits with streak tracking and progress visualization. 
+        Celebrate your spiritual growth and stay motivated.
+      </div>
     </div>
+    
     <div class="feature-box">
       <span>📚</span>
-      Saved lessons & outlines
+      <div class="feature-title">Saved Lessons & Outlines</div>
+      <div class="feature-description">
+        Save your favorite talks, lessons, and insights for future reference. 
+        Build your personal gospel library and never lose important content.
+      </div>
     </div>
   </div>
 
-  <div class="download-buttons">
+  <div class="cta-section">
+    <div class="cta-title">Ready to Transform Your Gospel Study?</div>
+    <div class="cta-description">
+      Join thousands of Latter-day Saints who are already using Latter Study to deepen their faith, 
+      prepare meaningful talks, and build stronger spiritual habits. Download now and start your journey!
+    </div>
     <a href="https://apps.apple.com/us/app/latter-study/id6746012386" target="_blank">
       <img src="/assets/app-store-badge.png" alt="Download on the App Store" style="height: 50px;" />
     </a>
